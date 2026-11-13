@@ -1,0 +1,59 @@
+# Reporte de limpieza de la base (2026-11-12)
+
+- Archivo: `preguntas_frecuentes_municipalidad.xlsx`, hoja `Revisdas`
+- Registros importados: **843**
+- Categorías normalizadas: Consultas (747), Servicios (43), Sin categoría (15), Trámites (38)
+- Registros sin categoría en el Excel: 15 → IDs [123, 124, 292, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625]
+- Registros con columnas corridas (Corporación Yunus), corregidos al importar: 49 → IDs 795–843
+- Registros con al menos un enlace (http/www) en la respuesta: 113 (13%)
+- Grupos de preguntas con el mismo texto: 47 (96 registros). No se eliminaron: se informan al municipio para que decida.
+
+## Preguntas repetidas (IDs)
+
+- 46, 705: ¿Las actividades que realiza el Programa Construyendo a tiempo en comunidad son pagadas en Peñalolén?
+- 62, 689: ¿Qué puedo hacer en caso de ruidos molestos en Peñalolén?
+- 194, 592: ¿Cómo se puede solicitar la reparación de baches en Peñalolén?
+- 195, 572: ¿Cómo puedo solicitar una patente comercial en Peñalolén?
+- 196, 573: ¿Qué debo tener presente antes de solicitar una patente comercial en Peñalolén?
+- 197, 574: ¿Por qué se debe ingresar a la propiedad, si solo estoy solicitando una oficina administrativa sin atención a público en Peñalolén?
+- 198, 575: Solicitudes de Patentes en viviendas, ¿Por qué es necesario inspeccionar el patio trasero de la misma en Peñalolén?
+- 199, 576: ¿Se debe estar presente en la visita Inspectiva en Peñalolén?
+- 200, 577: ¿Se notificará la visita Inspectiva de la dirección de obras municipales de Peñalolén con anterioridad?
+- 201, 578: En el caso de no poder acudir a la visita Inspectiva de la dirección de obras municipales de Peñalolén y no contar con alguna persona que facilite el acceso a la propiedad, ¿es posible reagendar la visita?
+- 202, 579: ¿Por qué es necesaria una visita Inspectiva de la Dirección de Obras Municipales de Peñalolén, si la Solicitud de Patente la realicé en el Departamento de Rentas?
+- 203, 580: ¿Por qué es necesaria una visita Inspectiva de parte de la Dirección de Obras Municipales de Peñalolén para una ampliación de giro o un cambio de ubicación, si ya poseo una patente comercial?
+- 204, 581: ¿Puedo conocer en la visita Inspectiva de la dirección de obras municipales el resultado de mi solicitud de Patente?
+- 205, 582: ¿Cómo puedo solicitar ayuda en el caso que no entienda el Informe Técnico emitido por Dirección de Obras Municipales de Peñalolén?
+- 206, 583: ¿Cómo puedo solicitar una patente de alcohol en Peñalolén?
+- 235, 325: ¿Cómo puedo conocer la deuda de un vehículo?
+- 270, 326: ¿Cuál es el enlace para ingresar a la OIRS Digital?
+- 272, 273, 327: ¿Cuál es el horario de atención de la Oirs Presencial y/o Oficina de Partes?
+- 277, 328: ¿Cuál es el proceso si mi vehículo sufre daños por el mal estado de las calles?
+- 279, 329: ¿Cuál es la fecha para tramitar exención de pago derechos de aseo domiciliario?
+- 282, 283, 330: ¿Cuáles son los canales oficiales para ingresar solicitudes o requerimientos en la Municipalidad de Peñalolén?
+- 284, 331: ¿Cuáles son los plazos de respuesta para solicitudes ingresadas a través de la OIRS Presencial?
+- 299, 332: ¿Dónde puedo reportar una luminaria en mal estado?
+- 305, 333: ¿Dónde se pueden reportar hoyos o daños en la vía pública?
+- 311, 334: ¿En la Oficina de Partes se pueden consultar los partes de tránsito?
+- 313, 335: ¿Por qué las multas del Juzgado de Policía Local llegan con tanto retraso?
+- 314, 336: ¿Puedo sacar o renovar mi licencia de conducir si soy de otra comuna?
+- 320, 337: ¿Quiénes integran el Concejo Municipal de Peñalolén?
+- 322, 338: ¿Se puede solicitar audiencia con la Alcaldesa en la Oficina de Partes?
+- 323, 339: ¿Se pueden realizar solicitudes por Ley de Transparencia en la Oficina de Partes?
+- 410, 731: ¿Cuánto ahorro necesito para postular al subsidio habitacional?
+- 418, 743: ¿Puedo postular al subsidio habitacional siendo soltero/a?
+- 419, 746: ¿Existe un programa para familias indígenas?
+- 421, 770: ¿Cuáles son los requisitos para postular al Subsidio de Arriendo Especial para Personas Mayores?
+- 423, 751: ¿Qué requisitos necesito para postular a un proyecto de integración social en la comuna?
+- 424, 752: ¿Qué debo hacer para ingresar a un proyecto de integración social de la comuna?
+- 426, 727: ¿Corresponde realizar otros pagos adicionales al ahorro exigido?
+- 427, 772: ¿Existe un subsidio para mejorar o ampliar una vivienda?
+- 428, 773: ¿Cómo se postula al D.S.27?
+- 429, 774: ¿Cuáles son los requisitos para postular al mejoramiento de viviendas (D.S.27)?
+- 431, 753: ¿Qué duración tiene el subsidio?
+- 432, 754: ¿El crédito hipotecario lo tramito en el SERVIU o en el banco?
+- 433, 775: ¿Dónde obtengo el certificado de avalúo fiscal y certificado de dominio vigente de la propiedad?
+- 434, 776: ¿Cómo puedo saber si mi vivienda tiene recepción final?
+- 435, 744: Me divorcié y mi ex cónyuge se quedó con la propiedad. ¿Puedo postular al subsidio nuevamente?
+- 436, 777: Mi casa tiene termitas. ¿A cuál subsidio puedo postular?
+- 516, 594: ¿Cómo solicitar arreglos de calles que se inundan en invierno en Peñalolén?

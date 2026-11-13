@@ -1,0 +1,24 @@
+[
+  { "nombre": "Licencia de conducir", "preguntas": [255, 340, 287, 256, 242, 314] },
+  { "nombre": "Permiso de circulación", "preguntas": [
+    { "id": 788, "titulo": "¿Cuánto cuesta mi permiso de circulación?" },
+    { "id": 782, "titulo": "¿Qué necesito para realizar la renovación del permiso de circulación en Peñalolén?" },
+    { "id": 781, "titulo": "¿Qué documentos necesito para obtener el primer permiso de circulación de mi vehículo?" },
+    { "id": 792, "titulo": "¿Puedo pagar mi permiso de circulación con tarjeta bancaria, en cuotas sin interés?" },
+    { "id": 787, "titulo": "¿Cómo puedo pagar mi permiso de circulación si está pagado en otra comuna?" },
+    { "id": 789, "titulo": "¿Cómo obtengo un duplicado del permiso de circulación, revisión técnica, gases, homologación y/o SOAP?" }
+  ] },
+  { "nombre": "Registro Social de Hogares", "preguntas": [251, 448, 450, 451, 413] },
+  { "nombre": "Subsidios y vivienda", "preguntas": [410, 411, 412, 422, 264, 232] },
+  { "nombre": "Reciclaje y medio ambiente", "preguntas": [120, 65, 66, 74, 76,
+    { "id": 58, "titulo": "Si hay basura o escombros botados en la vía pública, ¿dónde puedo denunciarlo?" }
+  ] },
+  { "nombre": "Patentes y emprendimiento", "preguntas": [195, 196, 254, 206, 560, 265] },
+  { "nombre": "Deporte y recreación", "preguntas": [3, 4, 1, 2, 5, 12] },
+  { "nombre": "Reclamos, OIRS y transparencia", "preguntas": [
+    { "id": 267, "titulo": "¿Cómo realizo una solicitud de información, reclamo y/o sugerencia de manera digital en la Municipalidad de Peñalolén?" },
+    270,
+    { "id": 272, "titulo": "¿Cuál es el horario de atención de la OIRS Presencial y/o Oficina de Partes?" },
+    284, 484, 488
+  ] }
+]
