@@ -87,7 +87,7 @@ test/                  Pruebas unitarias y de integración (node --test)
 ## Pruebas
 
 ```bash
-npm test              # 40 pruebas unitarias y de integración (no usan internet ni la API key)
+npm test              # todas pruebas unitarias y de integración (no usan internet ni la API key)
 npm run evaluar       # set de aceptación de 40 consultas, modo sin IA → pruebas/reporte_aceptacion_sin_ia.md
 npm run evaluar:ia    # mismo set, con Gemini → pruebas/reporte_aceptacion_con_ia.md (demora ~10 min; si se acaba la cuota, se retoma otro día)
 ```
