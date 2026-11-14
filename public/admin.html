@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Administrar preguntas · Peñalolén</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-texto fila cabecera-admin">
+      <div>
+        <p class="cabecera-muni">Municipalidad de Peñalolén</p>
+        <h1>Administrar preguntas frecuentes</h1>
+        <p class="cabecera-nota">Solo personal autorizado</p>
+      </div>
+      <button id="salir" class="btn sec" hidden>Cerrar sesión</button>
+    </div>
+    <svg class="cordillera" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="cerro-lejano" d="M0 90 L0 58 L70 40 L130 52 L210 22 L290 46 L360 30 L430 50 L520 14 L600 42 L680 28 L760 48 L850 18 L930 44 L1010 30 L1090 50 L1150 36 L1200 44 L1200 90 Z" />
+      <path class="cerro-cercano" d="M0 90 L0 72 L90 60 L170 70 L260 52 L340 68 L420 58 L520 74 L610 56 L700 70 L790 60 L880 72 L980 54 L1070 68 L1140 62 L1200 70 L1200 90 Z" />
+    </svg>
+  </header>
+
+  <main class="admin">
+    <!-- Login -->
+    <section id="vista-login" class="caja" hidden>
+      <h2>Iniciar sesión</h2>
+      <form id="form-login">
+        <div class="campo"><label for="usuario">Usuario</label><input id="usuario" autocomplete="username" required /></div>
+        <div class="campo"><label for="clave">Contraseña</label><input id="clave" type="password" autocomplete="current-password" required /></div>
+        <button class="btn" type="submit">Entrar</button>
+        <p id="error-login" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- Lista -->
+    <section id="vista-lista" class="caja" hidden>
+      <div class="fila">
+        <input id="buscar" type="search" placeholder="Buscar por texto, dirección o N° de registro" aria-label="Buscar preguntas" />
+        <button id="nueva" class="btn">+ Nueva pregunta</button>
+      </div>
+      <p id="total" class="nota total"></p>
+      <table class="tabla">
+        <thead><tr><th>N°</th><th>Pregunta</th><th class="col-dir">Dirección</th></tr></thead>
+        <tbody id="filas"></tbody>
+      </table>
+    </section>
+
+    <!-- Formulario crear/editar -->
+    <section id="vista-form" class="caja" hidden>
+      <h2 id="titulo-form">Nueva pregunta</h2>
+      <form id="form-faq">
+        <div class="campo"><label for="f-pregunta">Pregunta *</label><input id="f-pregunta" maxlength="300" required /></div>
+        <div class="campo"><label for="f-respuesta">Respuesta oficial * <span class="nota">(los enlaces que escribas se mostrarán como link)</span></label><textarea id="f-respuesta" maxlength="3000" required></textarea></div>
+        <div class="campo"><label for="f-direccion">Dirección responsable *</label><select id="f-direccion" required></select></div>
+        <div class="campo"><label for="f-categoria">Categoría</label><select id="f-categoria"></select></div>
+        <div class="campo"><label for="f-tags">Palabras clave (separadas por coma) <span class="nota">ayudan a que el asistente encuentre la pregunta</span></label><input id="f-tags" maxlength="300" /></div>
+        <div class="check"><input id="f-activo" type="checkbox" checked /><label for="f-activo">Activa (visible para el asistente)</label></div>
+        <div class="fila">
+          <button class="btn" type="submit">Guardar</button>
+          <button class="btn sec" type="button" id="cancelar">Volver</button>
+        </div>
+        <p id="msg-form" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
