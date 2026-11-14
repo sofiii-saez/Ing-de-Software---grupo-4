@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1f4e79" />
+  <title>Asistente de Trámites · Peñalolén</title>
+  <link rel="icon" href="data:," />
+  <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-texto">
+      <p class="cabecera-muni">Municipalidad de Peñalolén</p>
+      <h1>Asistente de trámites y servicios</h1>
+    </div>
+    <!-- Silueta de la precordillera: el rasgo visual propio del asistente -->
+    <svg class="cordillera" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="cerro-lejano" d="M0 90 L0 58 L70 40 L130 52 L210 22 L290 46 L360 30 L430 50 L520 14 L600 42 L680 28 L760 48 L850 18 L930 44 L1010 30 L1090 50 L1150 36 L1200 44 L1200 90 Z" />
+      <path class="cerro-cercano" d="M0 90 L0 72 L90 60 L170 70 L260 52 L340 68 L420 58 L520 74 L610 56 L700 70 L790 60 L880 72 L980 54 L1070 68 L1140 62 L1200 70 L1200 90 Z" />
+    </svg>
+  </header>
+
+  <main class="chat" aria-label="Conversación con el asistente">
+    <section class="bienvenida" id="bienvenida">
+      <h2>¡Hola, vecina y vecino!</h2>
+      <p class="presentacion">Soy la asistente virtual de trámites y servicios. ¿En qué te puedo ayudar hoy?</p>
+      <p>Puedo orientarte sobre trámites, servicios y beneficios municipales. Revisa las preguntas frecuentes de cada tema o escribe tu duda en el chat.</p>
+      <div class="temas" id="temas" aria-label="Preguntas frecuentes por tema"></div>
+      <p class="aviso" role="note">Para cuidar tu información, no escribas datos personales como tu RUT, dirección, teléfono o correo.</p>
+    </section>
+    <ol id="mensajes" class="mensajes" aria-live="polite"></ol>
+  </main>
+
+  <form id="formulario" class="entrada" autocomplete="off">
+    <label for="consulta" class="oculto">Escribe tu pregunta</label>
+    <input id="consulta" name="consulta" maxlength="500" placeholder="Escribe tu pregunta" required />
+    <button type="submit" id="enviar">Preguntar</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>

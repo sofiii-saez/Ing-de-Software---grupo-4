@@ -1,0 +1,166 @@
+/* Asistente de trámites · Municipalidad de Peñalolén (prototipo)
+   Tipografía: Atkinson Hyperlegible Next (Braille Institute, licencia OFL), diseñada para personas
+   con baja visión: letras que no se confunden entre sí (I/l/1, O/0). Elegida pensando en adultos mayores.
+   Paleta: azul cordillera (confianza institucional) + ámbar atardecer solo para foco y detalles. */
+
+@font-face { font-family: "Atkinson Next"; src: url("fonts/atkinson-hyperlegible-next-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Atkinson Next"; src: url("fonts/atkinson-hyperlegible-next-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Atkinson Next"; src: url("fonts/atkinson-hyperlegible-next-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+
+:root {
+  --niebla: #f2f4f7;        /* fondo */
+  --blanco: #ffffff;
+  --tinta: #1a2533;         /* texto */
+  --cerro: #566477;         /* texto secundario */
+  --linea: #d9e0e8;
+  --cordillera: #1f4e79;    /* color principal */
+  --cordillera-osc: #163a5c;
+  --cordillera-suave: #e6eef6;
+  --atardecer: #f2a541;     /* acento: foco y detalles */
+  --aviso: #fff6e5;
+  --error: #b42318;
+  --ok: #18794e;
+  --radio: 14px;
+  --ancho: 46rem;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+  font: 400 1.125rem/1.55 "Atkinson Next", system-ui, sans-serif;
+  background: var(--niebla); color: var(--tinta);
+}
+button, input, textarea, select { font: inherit; color: inherit; }
+a { color: var(--cordillera); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--atardecer); outline-offset: 2px; border-radius: 6px; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Cabecera con la silueta de la precordillera ---------- */
+.cabecera { background: var(--cordillera); color: #fff; position: relative; padding: 22px 0 0; }
+.cabecera-texto { max-width: calc(var(--ancho) + 32px); margin: 0 auto; padding: 0 16px 6px; }
+.cabecera-muni { margin: 0; font-weight: 600; font-size: .95rem; color: #cfe0f1; }
+.cabecera h1 { margin: 2px 0 4px; font-size: clamp(1.45rem, 4.5vw, 1.9rem); font-weight: 800; line-height: 1.15; letter-spacing: -.01em; }
+.cabecera-nota { margin: 0; font-size: .85rem; color: #b9cde2; }
+.cordillera { display: block; width: 100%; height: clamp(40px, 6vw, 72px); margin-top: 4px; }
+.cerro-lejano { fill: #2c6496; }
+.cerro-cercano { fill: var(--niebla); }
+
+/* ---------- Bienvenida ---------- */
+.chat { flex: 1; width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 8px 16px 24px; }
+.bienvenida h2 { font-size: clamp(1.5rem, 4.5vw, 1.85rem); font-weight: 800; line-height: 1.2; margin: 8px 0 4px; }
+.bienvenida > p { margin: 0 0 18px; color: var(--cerro); max-width: 38em; }
+.bienvenida > .presentacion { margin: 0 0 10px; color: var(--tinta); font-size: 1.2rem; font-weight: 600; }
+.temas { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(10rem, 40%), 1fr)); gap: 10px; margin-bottom: 18px; }
+.temas[hidden] { display: none; }
+.tema {
+  text-align: left; padding: 14px 16px; min-height: 56px; cursor: pointer;
+  background: var(--blanco); border: 1.5px solid var(--linea); border-radius: 12px;
+  font-weight: 600; color: var(--cordillera); transition: border-color .15s, background .15s;
+}
+.tema:hover { border-color: var(--cordillera); background: var(--cordillera-suave); }
+.aviso { margin: 0 0 20px; padding: 10px 14px; background: var(--aviso); border-left: 4px solid var(--atardecer); border-radius: 0 10px 10px 0; font-size: .95rem; }
+
+/* ---------- Conversación ---------- */
+.mensajes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.msg { max-width: min(100%, 40rem); }
+.msg p { margin: 0 0 8px; } .msg p:last-child { margin-bottom: 0; }
+.msg.vecino {
+  align-self: flex-end; max-width: 85%; background: var(--cordillera); color: #fff;
+  padding: 10px 16px; border-radius: var(--radio) var(--radio) 4px var(--radio);
+}
+.msg.bot {
+  align-self: flex-start; width: 100%; background: var(--blanco); padding: 16px 18px;
+  border-radius: 4px var(--radio) var(--radio) var(--radio); box-shadow: 0 1px 0 var(--linea), 0 0 0 1px var(--linea);
+}
+.respuesta { white-space: pre-line; overflow-wrap: anywhere; }
+.escribiendo { color: var(--cerro); }
+.escribiendo::after { content: ""; display: inline-block; width: 1.2em; text-align: left; animation: puntos 1.2s steps(4) infinite; }
+@keyframes puntos { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
+
+.acciones { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.boton-enlace {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; border-radius: 10px;
+  background: var(--cordillera); color: #fff !important; text-decoration: none; font-weight: 600;
+}
+.boton-enlace:hover { background: var(--cordillera-osc); }
+.nota { color: var(--cerro); font-size: 1rem; }
+
+.fuentes { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--linea); }
+.fuente-linea { margin: 0 !important; font-size: .9rem; color: var(--cerro); }
+.oficial { margin-top: 8px; font-size: 1rem; }
+.oficial summary { cursor: pointer; color: var(--cordillera); font-weight: 600; font-size: .95rem; padding: 4px 0; }
+.oficial[open] { background: var(--niebla); border-radius: 10px; padding: 4px 14px 12px; }
+.oficial-pregunta { font-weight: 600; margin: 10px 0 2px !important; }
+
+.relacionadas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.titulo-chips { width: 100%; margin: 0 !important; font-size: .9rem; color: var(--cerro); }
+.chip {
+  text-align: left; cursor: pointer; padding: 8px 14px; border-radius: 10px; font-size: .98rem;
+  background: var(--cordillera-suave); border: 1px solid transparent; color: var(--cordillera-osc);
+}
+.chip:hover { border-color: var(--cordillera); }
+
+.lista-faq { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.faq {
+  text-align: left; cursor: pointer; padding: 10px 14px; border-radius: 10px;
+  background: var(--blanco); border: 1.5px solid var(--linea); color: var(--cordillera-osc);
+}
+.faq:hover { border-color: var(--cordillera); background: var(--cordillera-suave); }
+
+/* ---------- Caja para escribir ---------- */
+.entrada {
+  position: sticky; bottom: 0; width: 100%; display: flex; gap: 8px;
+  padding: 12px max(16px, calc((100% - var(--ancho)) / 2 + 16px)) calc(12px + env(safe-area-inset-bottom));
+  background: var(--blanco); border-top: 1px solid var(--linea);
+}
+.entrada input {
+  flex: 1; min-width: 0; min-height: 52px; padding: 12px 16px;
+  border: 1.5px solid var(--linea); border-radius: 12px; background: var(--niebla);
+}
+.entrada input:focus { border-color: var(--cordillera); background: var(--blanco); outline: none; box-shadow: 0 0 0 3px var(--atardecer); }
+.btn, .entrada button {
+  min-height: 52px; padding: 0 22px; border: 0; border-radius: 12px; cursor: pointer;
+  background: var(--cordillera); color: #fff; font-weight: 600;
+}
+.btn:hover, .entrada button:hover { background: var(--cordillera-osc); }
+.entrada button:disabled { opacity: .55; cursor: wait; }
+
+/* ---------- Panel de administración ---------- */
+.admin { width: 100%; max-width: 60rem; margin: 0 auto; padding: 8px 16px 32px; }
+.cabecera .fila { max-width: 60rem; }
+.caja { background: var(--blanco); border-radius: var(--radio); padding: 20px; margin-bottom: 16px; box-shadow: 0 0 0 1px var(--linea); }
+.caja h2 { margin: 0 0 14px; font-size: 1.3rem; font-weight: 800; }
+.campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; font-weight: 600; }
+.campo .nota { font-weight: 400; font-size: .9rem; }
+.campo input, .campo textarea, .campo select {
+  font-weight: 400; padding: 10px 12px; border: 1.5px solid var(--linea); border-radius: 10px; width: 100%; background: var(--blanco);
+}
+.campo textarea { min-height: 160px; resize: vertical; line-height: 1.5; }
+.check { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.check input { width: 20px; height: 20px; accent-color: var(--cordillera); }
+.fila { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.fila input[type="search"] { flex: 1; min-width: 200px; min-height: 48px; padding: 10px 14px; border: 1.5px solid var(--linea); border-radius: 10px; }
+.btn { min-height: 48px; }
+.btn.sec { background: var(--blanco); color: var(--cordillera); box-shadow: inset 0 0 0 1.5px var(--cordillera); }
+.btn.sec:hover { background: var(--cordillera-suave); }
+.cabecera .btn.sec { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px #9fbbd8; min-height: 40px; }
+.tabla { width: 100%; border-collapse: collapse; font-size: 1rem; margin-top: 8px; }
+.tabla th { text-align: left; font-size: .9rem; color: var(--cerro); font-weight: 600; padding: 8px; border-bottom: 1.5px solid var(--linea); }
+.tabla td { padding: 10px 8px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.tabla td:first-child { color: var(--cerro); font-variant-numeric: tabular-nums; width: 4rem; }
+.tabla tbody tr { cursor: pointer; }
+.tabla tbody tr:hover td { background: var(--cordillera-suave); }
+.error { color: var(--error); font-weight: 600; }
+.ok { color: var(--ok); font-weight: 600; }
+@media (max-width: 640px) { .col-dir { display: none; } .caja { padding: 16px; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+.cabecera-admin { justify-content: space-between; max-width: calc(60rem + 32px); }
+.total { margin: 12px 0 0; }
+@media (max-width: 480px) {
+  body { font-size: 1.0625rem; }
+  .tema { padding: 12px; min-height: 64px; font-size: 1rem; }
+  .entrada button { padding: 0 16px; }
+}
