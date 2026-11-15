@@ -1,0 +1,323 @@
+{
+ "1": {
+  "n": 1,
+  "hu": "HU-01",
+  "consulta": "como renuevo la licencia de conducir",
+  "esperados": [
+   255,
+   287
+  ],
+  "respondio": true,
+  "id": 255,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "2": {
+  "n": 2,
+  "hu": "HU-01",
+  "consulta": "perdí mi carnet de manejar, como saco otro",
+  "esperados": [
+   256
+  ],
+  "respondio": true,
+  "id": 256,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "3": {
+  "n": 3,
+  "hu": "HU-02",
+  "consulta": "que necesito para el subsidio del agua",
+  "esperados": [
+   264
+  ],
+  "respondio": true,
+  "id": 264,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "4": {
+  "n": 4,
+  "hu": "HU-01",
+  "consulta": "como saco la ficha del registro social de hogares",
+  "esperados": [
+   251
+  ],
+  "respondio": true,
+  "id": 251,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "5": {
+  "n": 5,
+  "hu": "HU-04",
+  "consulta": "a que hora atiende la oirs",
+  "esperados": [
+   272,
+   273,
+   327
+  ],
+  "respondio": true,
+  "id": 273,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "6": {
+  "n": 6,
+  "hu": "HU-05",
+  "consulta": "cual es el link de la oirs digital",
+  "esperados": [
+   270,
+   281,
+   326
+  ],
+  "respondio": true,
+  "id": 281,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "7": {
+  "n": 7,
+  "hu": "HU-04",
+  "consulta": "donde reciclo el aceite de cocina usado",
+  "esperados": [
+   120
+  ],
+  "respondio": true,
+  "id": 120,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "8": {
+  "n": 8,
+  "hu": "HU-03",
+  "consulta": "que cosas no puedo echar en la compostera",
+  "esperados": [
+   76
+  ],
+  "respondio": true,
+  "id": 76,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "9": {
+  "n": 9,
+  "hu": "HU-04",
+  "consulta": "hay un auto abandonado en mi pasaje, donde lo denuncio",
+  "esperados": [
+   57
+  ],
+  "respondio": true,
+  "id": 57,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia-texto-oficial"
+ },
+ "10": {
+  "n": 10,
+  "hu": "HU-04",
+  "consulta": "mis vecinos hacen mucha bulla, que puedo hacer",
+  "esperados": [
+   62,
+   689
+  ],
+  "respondio": true,
+  "id": 689,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia-texto-oficial"
+ },
+ "11": {
+  "n": 11,
+  "hu": "HU-04",
+  "consulta": "como pido que arreglen el foco de luz de mi calle",
+  "esperados": [
+   299,
+   332,
+   589
+  ],
+  "respondio": true,
+  "id": 589,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia-texto-oficial"
+ },
+ "12": {
+  "n": 12,
+  "hu": "HU-04",
+  "consulta": "como pido que tapen un hoyo en la calle",
+  "esperados": [
+   194,
+   592
+  ],
+  "respondio": true,
+  "id": 305,
+  "correcto": false,
+  "resultado": "Registro equivocado",
+  "fuente": "ia"
+ },
+ "13": {
+  "n": 13,
+  "hu": "HU-01",
+  "consulta": "cuanto cuesta el permiso de circulacion",
+  "esperados": [
+   788
+  ],
+  "respondio": true,
+  "id": 788,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "14": {
+  "n": 14,
+  "hu": "HU-05",
+  "consulta": "se puede pagar el permiso de circulacion por internet",
+  "esperados": [
+   791
+  ],
+  "respondio": true,
+  "id": 791,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "15": {
+  "n": 15,
+  "hu": "HU-01",
+  "consulta": "como saco patente comercial para mi negocio",
+  "esperados": [
+   195,
+   253,
+   557,
+   569,
+   572
+  ],
+  "respondio": true,
+  "id": 253,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "16": {
+  "n": 16,
+  "hu": "HU-01",
+  "consulta": "quiero cerrar mi patente, como lo hago",
+  "esperados": [
+   265,
+   571
+  ],
+  "respondio": true,
+  "id": 571,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "17": {
+  "n": 17,
+  "hu": "HU-01",
+  "consulta": "como se si mi casa esta regularizada",
+  "esperados": [
+   163
+  ],
+  "respondio": true,
+  "id": 163,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia-texto-oficial"
+ },
+ "19": {
+  "n": 19,
+  "hu": "HU-03",
+  "consulta": "donde me inscribo en un taller de deporte",
+  "esperados": [
+   5
+  ],
+  "respondio": true,
+  "id": 5,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "22": {
+  "n": 22,
+  "hu": "HU-03",
+  "consulta": "en que banco abro la libreta de ahorro para la vivienda",
+  "esperados": [
+   757
+  ],
+  "respondio": true,
+  "id": 757,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "24": {
+  "n": 24,
+  "hu": "HU-04",
+  "consulta": "donde estan los cesfam",
+  "esperados": [
+   304
+  ],
+  "respondio": true,
+  "id": 304,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "27": {
+  "n": 27,
+  "hu": "HU-03",
+  "consulta": "como entra mi hija a la escuela de ballet",
+  "esperados": [
+   521,
+   537
+  ],
+  "respondio": true,
+  "id": 537,
+  "correcto": true,
+  "resultado": "Correcta",
+  "fuente": "ia"
+ },
+ "34": {
+  "n": 34,
+  "hu": "HU-06",
+  "consulta": "quien gano la eleccion presidencial",
+  "esperados": null,
+  "respondio": false,
+  "id": null,
+  "correcto": true,
+  "resultado": "Correcto: dice que no sabe y deriva",
+  "fuente": "ia"
+ },
+ "38": {
+  "n": 38,
+  "hu": "HU-06",
+  "consulta": "como saco licencia de piloto de avion",
+  "esperados": null,
+  "respondio": false,
+  "id": null,
+  "correcto": true,
+  "resultado": "Correcto: dice que no sabe y deriva",
+  "fuente": "ia"
+ },
+ "40": {
+  "n": 40,
+  "hu": "HU-06",
+  "consulta": "como pido un uber al aeropuerto",
+  "esperados": null,
+  "respondio": false,
+  "id": null,
+  "correcto": true,
+  "resultado": "Correcto: dice que no sabe y deriva",
+  "fuente": "ia"
+ }
+}
